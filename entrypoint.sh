@@ -38,9 +38,10 @@ else
 fi
 
 echo "Multiline"
-echo $PR_BODY
+echo "$PR_BODY"
+echo -e "$PR_BODY"
 
-echo $INPUT_PULL_REQUEST_BODY
+echo "$INPUT_PULL_REQUEST_BODY"
 
 CLONE_DIR=$(mktemp -d)
 
@@ -63,7 +64,7 @@ git add .
 if git status | grep -q "Changes to be committed"
 then
   git commit --message "Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
-  echo -e $PR_BODY > pr_body
+  echo -e "$PR_BODY" > pr_body
   
   if [ $INPUT_ALLOW_FORCE_PUSH == "false" ]
   then
