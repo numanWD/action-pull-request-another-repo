@@ -58,7 +58,7 @@ git add .
 if git status | grep -q "Changes to be committed"
 then
   git commit --message "Update from https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
-  echo $PR_BODY > pr_body
+  echo -e $PR_BODY > pr_body
   
   if [ $INPUT_ALLOW_FORCE_PUSH == "false" ]
   then
