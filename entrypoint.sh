@@ -64,6 +64,7 @@ then
   echo $PR_BODY > pr_body
   
   if [ $INPUT_ALLOW_FORCE_PUSH == "false" ]
+  then
     gh pr create -t "$PR_TITLE" \
                 -F pr_body \
                 -B $INPUT_DESTINATION_BASE_BRANCH \
