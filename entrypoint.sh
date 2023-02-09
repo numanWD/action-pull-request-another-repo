@@ -37,12 +37,6 @@ else
   PR_BODY=$INPUT_PULL_REQUEST_BODY
 fi
 
-echo "Multiline"
-echo "$PR_BODY"
-echo -e "$PR_BODY"
-
-echo "$INPUT_PULL_REQUEST_BODY"
-
 CLONE_DIR=$(mktemp -d)
 
 echo "Setting git variables"
